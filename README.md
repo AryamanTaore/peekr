@@ -13,37 +13,52 @@ Peekr was developed by **Aryaman Taore**, a visual neuroscientist and machine le
 These results were obtained from 30 randomly selected participants using their own setups, with no supervision. Each participant followed a stimulus on screen after completing a simple 5-dot calibration. The calibration consisted of four dots in the corners and one in the center of the screen. After this, a linear fit was applied separately to the x and y axes to adjust the gaze predictions.
 
 ---
-
-## 🚀 Load via npm
+## 🚀 Install via NPM
 
 ```bash
 npm install peekr
 ```
 
-Then:
+Then use it in your app:
 
 ```js
 import * as Peekr from 'peekr';
+
+Peekr.initEyeTracking({
+  onReady: () => console.log("Ready"),
+  onGaze: (gaze) => {
+    console.log(gaze.output.cpuData); // [x, y] in ~[0,1]
+  }
+});
+
+Peekr.runEyeTracking(); // Start prediction
+Peekr.stopEyeTracking(); // Stop webcam and prediction
+```
+---
+## 🧪 Demo App
+
+A full demo is available in the [`/demo`](./demo) folder.
+
+### 🧰 To run it locally:
+
+```bash
+cd demo
+npm install
+npm run start
 ```
 
+Then open [http://localhost:8080](http://localhost:8080) in your browser.
+
+### 🧭 How to use the demo:
+
+1. **Click "Init Eye Tracking"** – this loads the model and sets up the webcam.
+2. Once the model is ready, a message will confirm that it's loaded.
+3. **Click "Run Eye Tracking"** – a red dot will begin tracking your gaze in real-time.
+4. Use the **calibration sliders** to adjust the X/Y offset and scaling so the dot aligns with your actual gaze.
+
+> Requires: Chrome or any browser with webcam + WASM support
+
 ---
-
-## 🧪 Demo (with Calibration Panel)
-
-I have attached a `public/index.html` demo file. To run this demo, follow these steps:
-
-1. First, build the project by running the following command:
-
-   ```bash
-   npm install
-   npm run build
-   ```
-
-2. Then, run the demo using npx with the following command:
-
-   ```bash
-   npm run serve
-   ```
 
 ## 🧠 Available Functions
 
