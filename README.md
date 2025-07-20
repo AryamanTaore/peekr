@@ -14,6 +14,20 @@ These results were obtained from 30 randomly selected participants using their o
 
 ---
 
+## 🚀 Load via npm
+
+```bash
+npm install peekr
+```
+
+Then:
+
+```js
+import * as Peekr from 'peekr';
+```
+
+---
+
 ## 🧪 Demo (with Calibration Panel)
 
 I have attached a `public/index.html` demo file. To run this demo, follow these steps:
@@ -62,18 +76,6 @@ Stops webcam and gaze processing.
 | `.wasm` files | ONNX Runtime Web WASM backend   |
 
 ---
-
-## 🚀 Load via npm
-
-```bash
-npm install peekr
-```
-
-Then:
-
-```js
-import * as Peekr from 'peekr';
-```
 
 ## 📦 Publishing
 
