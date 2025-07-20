@@ -6,7 +6,7 @@ async function loadModel() {
   if (onnxSession) return;
   
   onnxSession = await InferenceSession.create(
-    "model/peekr.onnx",
+    "https://eyetrackingdata.blob.core.windows.net/public/models/peekr.onnx",
     {
       executionProviders: ["wasm"],
       graphOptimizationLevel: "all",
